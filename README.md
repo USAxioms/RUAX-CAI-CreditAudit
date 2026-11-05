@@ -1,5 +1,6 @@
 # WAD18 Credit Audit State Machine: Reproducibility Capsule v0.1.0
 
+Michael Aaron Russell ORCID # 0009-0001-3360-6709
 Deterministic, integer-only (1e18 fixed point) credit-report audit state machine. Python is the canonical reference;
 `src/CreditAuditSM.sol` mirrors it. Every run prints its full intermediate math (the Trace).
 
