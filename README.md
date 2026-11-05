@@ -1,4 +1,4 @@
-# RUAX- CAI Credit Audit State Machine: Reproducibility Capsule v0.1.0
+# RUAX- CAI Credit Audit State Machine
 
 **Author:** Michael Aaron Russell ([ORCID 0009-0001-3360-6709](https://orcid.org/0009-0001-3360-6709))
 
