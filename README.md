@@ -1,4 +1,4 @@
-# Universal Standard Axiom Credit Audit Architecture
+# RUAX- CAI Credit Audit
 
 **Author:** Michael Aaron Russell  
 **ORCID:** [0009-0001-3360-6709](https://orcid.org/0009-0001-3360-6709)  
