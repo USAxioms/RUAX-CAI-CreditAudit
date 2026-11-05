@@ -1,50 +1,13 @@
-# RUAX- CAI Credit Audit
+# WAD18 Credit Audit State Machine: Reproducibility Capsule v0.1.0
 
-**Author:** Michael Aaron Russell  
-**ORCID:** [0009-0001-3360-6709](https://orcid.org/0009-0001-3360-6709)  
-**Organization:** Universal Standard Axiom Corporation  
+Deterministic, integer-only (1e18 fixed point) credit-report audit state machine. Python is the canonical reference;
+`src/CreditAuditSM.sol` mirrors it. Every run prints its full intermediate math (the Trace).
 
-Universal Standard Axiom framework for deterministic, zero-drift credit auditing and financial reconciliation. Built on $10^{18}$ Weak Arithmetic Decidability (WAD) fixed-point integer arithmetic, this system eliminates floating-point calculation drift and non-determinism across all underwriting, credit scoring, and portfolio risk evaluation workflows.
+Run (Python 3.10+, no dependencies, no network): `sh run.sh`
+Solidity parity (user must run; NOT executed when this capsule was built): install Foundry + forge-std, then `forge test -vv`.
 
-## Core Architecture
-* **Fixed-Point Engine ($10^{18}$ WAD):** Eliminates floating-point calculation drift, ensuring absolute mathematical determinism across all credit scoring and auditing computations.
-* **Sovereign Axiomatic Front-End (SAFE):** Enforces ontological grounding and normative accountability at the interface and compliance layers.
-* **Deterministic Reconciliation:** Provides bit-exact validation for financial portfolios, underwriting metrics, and risk reserves.
+Layout: ledger/ (hash-chained Cognitive State Ledger), ref/ (canonical model), src/ (Solidity), tests/ (vectors, suite,
+mutation tester, Foundry generator), test/ (generated Foundry parity test), paper/ (white paper), MANIFEST.sha256.
 
-## System Workflow Architecture
-
-
-+-----------------------------------------------------------------+
-|                   Sovereign Axiomatic Front-End                 |
-|                   (SAFE / Ontological Grounding)                |
-+-----------------------------------------------------------------+
-|
-v
-+-----------------------------------------------------------------+
-|                 10^18 WAD Fixed-Point Arithmetic                |
-|               (Zero-Drift Execution & Computation)              |
-+-----------------------------------------------------------------+
-|
-+-----------------------+-----------------------+
-|                                               |
-v                                               v
-+-------------------------------+   +-------------------------------+
-|     Credit Audit Engine       |   |   Portfolio Risk & Reserves   |
-|   (Bit-Exact Verification)    |   |    (Deterministic Scoring)    |
-+-------------------------------+   +-------------------------------+
-|                                               |
-+-----------------------+-----------------------+
-|
-v
-+-----------------------------------------------------------------+
-|                   Verified Audit Manifest Output                |
-+-----------------------------------------------------------------+
-
-## Repository Structure
-* `/src` - Core arithmetic engines and credit audit verification modules.
-* `/docs` - Specifications, mathematical proofs, and audit methodology documentation.
-* `/manifests` - Dataset schemas and verification manifests.
-
-## License
-Distributed under the Universal Standard Axiom open-source licensing framework. See [LICENSE](LICENSE) for details.
-
+IMPORTANT: this is NOT the FICO or VantageScore algorithm (those are proprietary and unpublished). It mirrors only the
+publicly documented factor weights (35/30/15/10/10) and the standard utilization ratio. See paper/WHITEPAPER.md section 2.
